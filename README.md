@@ -62,7 +62,7 @@
         valori.push(input.value);
       }
 
-      var messaggio = "Per giovedì voglio:\n" + "-" valori.join("\n");
+      var messaggio = "Per giovedì voglio :\n" + "-" valori.join("\n");
       var numeroTelefono = "3756046392";
 
       var url = "https://wa.me/" + numeroTelefono + "?text=" + encodeURIComponent(messaggio);
