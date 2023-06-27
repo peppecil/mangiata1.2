@@ -3,7 +3,7 @@
 <head>
   <title>Pizzata giovedì</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+   <style>
     * {
       box-sizing: border-box;
     }
@@ -58,10 +58,14 @@
       border: none;
       cursor: pointer;
     }
+    
+    .improve-link {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h1>Inviami quello che vuoi!</h1>
+  <h1>Inviami quello che vuoi!!!</h1>
 
   <form onsubmit="return false;">
     <div id="boxWrapper">
