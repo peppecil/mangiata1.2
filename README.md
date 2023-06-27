@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1>Inviami quello che vuoi</h1>
+  <h1>Inviami quello che vuoi per giovedì</h1>
 
   <form onsubmit="return false;">
     <input type="text" placeholder="Inserisci qui" id="input1" />
