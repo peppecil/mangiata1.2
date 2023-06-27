@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
   <title>Pizzata giovedì</title>
@@ -12,6 +12,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
+      background-color: #222;
+      color: #fff;
     }
 
     h1 {
@@ -26,6 +28,9 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
+      background-color: #444;
+      color: #fff;
+      border: none;
     }
 
     .button-wrapper {
@@ -45,14 +50,22 @@
       align-items: center;
       justify-content: center;
     }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1>Inviami quello che vuoi!!!</h1>
+  <h1>Inviami quello che vuoi!</h1>
 
   <form onsubmit="return false;">
     <div id="boxWrapper">
-      <input type="text" placeholder="cosa ti spila?" id="input1" />
+      <input type="text" placeholder="Cosa vuoi?" id="input1" />
     </div>
     <div class="button-wrapper">
       <button class="add-button" onclick="aggiungiBox()">+</button>
@@ -64,11 +77,20 @@
     function inviaListaWhatsApp() {
       var valori = [];
       var inputCount = document.getElementById("boxWrapper").getElementsByTagName("input").length;
+      var isEmpty = true;
 
       for (var i = 1; i <= inputCount; i++) {
         var inputId = "input" + i;
         var input = document.getElementById(inputId);
         valori.push(input.value);
+        if (input.value.trim() !== "") {
+          isEmpty = false;
+        }
+      }
+
+      if (isEmpty) {
+        alert("Non puoi non volere nulla! Dai su");
+        return;
       }
 
       var messaggio = "Per giovedì voglio :\n" + valori.join("\n");
@@ -76,9 +98,9 @@
 
       var url = "https://wa.me/" + numeroTelefono + "?text=" + encodeURIComponent(messaggio);
 
-      if (confirm("Sei sicuro/a di voler inviare?")) {
-        if (confirm("Sei veramente sicuro/a?")) {
-          if (confirm("Sicuro/a sicuro/a?")) {
+      if (confirm("Sei sicuro di voler inviare?")) {
+        if (confirm("Sei veramente sicuro?")) {
+          if (confirm("Sicuro sicuro?")) {
             var link = document.createElement("a");
             link.href = url;
             link.target = "_blank";
@@ -101,7 +123,7 @@
       if (inputCount < 5) {
         var newInput = document.createElement("input");
         newInput.type = "text";
-        newInput.placeholder = "Cosa ti spila?";
+        newInput.placeholder = "Cosa vuoi?";
         newInput.id = "input" + (inputCount + 1);
 
         boxWrapper.appendChild(newInput);
