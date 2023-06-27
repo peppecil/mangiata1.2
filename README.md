@@ -98,7 +98,7 @@
       var boxWrapper = document.getElementById("boxWrapper");
       var inputCount = boxWrapper.getElementsByTagName("input").length;
 
-      if (inputCount < 7) {
+      if (inputCount < 5) {
         var newInput = document.createElement("input");
         newInput.type = "text";
         newInput.placeholder = "Cosa ti spila?";
@@ -106,7 +106,7 @@
 
         boxWrapper.appendChild(newInput);
       } else {
-        alert("Hai raggiunto il limite massimo di box di testo (7).");
+        alert("E BASTAAA!");
       }
     }
   </script>
