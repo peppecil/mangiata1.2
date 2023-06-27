@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1>Inviami quello che vuoi per giovedì</h1>
+  <h1>Inviami quello che vuoi!</h1>
 
   <form onsubmit="return false;">
     <input type="text" placeholder="Inserisci qui" id="input1" />
@@ -62,7 +62,7 @@
         valori.push(input.value);
       }
 
-      var messaggio = "Per giovedì voglio :\n" + "-" valori.join("\n");
+      var messaggio = "Per giovedì voglio :\n" + valori.join("\n");
       var numeroTelefono = "3756046392";
 
       var url = "https://wa.me/" + numeroTelefono + "?text=" + encodeURIComponent(messaggio);
