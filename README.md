@@ -101,7 +101,7 @@
       if (inputCount < 7) {
         var newInput = document.createElement("input");
         newInput.type = "text";
-        newInput.placeholder = "Inserisci qui";
+        newInput.placeholder = "Cosa ti spila?";
         newInput.id = "input" + (inputCount + 1);
 
         boxWrapper.appendChild(newInput);
